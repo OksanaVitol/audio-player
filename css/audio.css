@@ -1,0 +1,275 @@
+/*need to be minifyed in real project*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+body {
+    line-height: 1.5em;
+    color: #fff;
+    background: url("../img/bg_small.jpg");
+    background-repeat: no-repeat;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.html-audio-player .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: #666 solid 2px;
+    text-align: center;
+}
+
+.html-audio-player .audio-img {
+    width: 50%;
+}
+
+.html-audio-player .audio-info {
+    font-size: 1.5em;
+    margin-top: 10px
+}
+
+.html-audio-player button {
+    width: 40px;
+    height: 40px;
+    background: black;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.html-audio-player .volume-control {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.html-audio-player .volume,
+.html-audio-player .volume-img {
+    float: left;
+}
+
+.html-audio-player .volume {
+    width: 25%;
+    height: 40px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.html-audio-player .unmuted:after {
+    content: "\f028";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: inherit;
+    width: 40px;
+    line-height: 40px;
+}
+
+.html-audio-player .muted:after {
+    content: "\f026";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: inherit;
+    width: 40px;
+    line-height: 40px;
+}
+
+.html-audio-player .progress {
+    margin-top: 5px;
+    margin-bottom: 0;
+    position: relative;
+    background: #444;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid #000;
+}
+
+.html-audio-player .played {
+    position: absolute;
+    height: 20px;
+    width: 0;
+    background: rgba(0, 0, 0, 0.8);
+
+}
+
+.html-audio-player #playlist {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.html-audio-player #playlist li {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.html-audio-player #playlist li.active {
+    font-weight: bold;
+    padding: 3px;
+    background: #666;
+    color: white;
+}
+
+.html-audio-player #duration {
+    float: left;
+}
+
+.html-audio-player #duration-all {
+    float: right;
+}
+
+.html-audio-player .seek {
+    position: absolute;
+    height: 20px;
+    opacity: 0.1;
+}
+
+/* STYLING TRACK */
+.html-audio-player input[type=range].seek::-webkit-slider-runnable-track,
+.html-audio-player input[type=range].seek::-moz-range-track {
+    height: 20px;
+    background: none;
+    border: none;
+    border-radius: 3px;
+}
+
+/*Webkit based browsers (Chrome, Safari, Opera)*/
+.html-audio-player input[type=range].seek {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    background: #666;
+}
+
+/* STYLING THUMB (Webkit based browsers (Chrome, Safari, Opera)) */
+.html-audio-player input[type=range].seek::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border: none;
+    height: 16px;
+    width: 2px;
+    background: rgba(0, 0, 0, 0.8);
+
+}
+
+/* STYLING THUMB Firefox */
+.html-audio-player input[type=range].seek::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 2px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/*Webkit based browsers (Chrome, Safari, Opera)*/
+.html-audio-player input[type=range].volume {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    background: #666;
+}
+
+/* STYLING TRACK */
+.html-audio-player input[type=range].volume::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+/* STYLING THUMB */
+.html-audio-player input[type=range].volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+
+.html-audio-player input[type=range].volume:focus {
+    outline: none;
+}
+
+.html-audio-player input[type=range].volume:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+/* STYLING TRACK Firefox*/
+.html-audio-player input[type=range].volume::-moz-range-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+/* STYLING THUMB Firefox*/
+.html-audio-player input[type=range].volume::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+
+/*hide the outline behind the border*/
+.html-audio-player input[type=range].volume:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+/*Internet Explorer 10 +*/
+.html-audio-player input[type=range].volume::-ms-track {
+    height: 5px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+.html-audio-player input[type=range].volume::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+
+.html-audio-player input[type=range].volume::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.html-audio-player input[type=range].volume::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+
+.html-audio-player input[type=range].volume:focus::-ms-fill-lower {
+    background: #888;
+}
+
+.html-audio-player input[type=range].volume:focus::-ms-fill-upper {
+    background: #ccc;
+}
+

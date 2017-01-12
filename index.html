@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="html-audio-player">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+    <!-- load bootstrap via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <!-- load my css files -->
+    <link rel="stylesheet" type="text/css" href="css/audio.css"/>
+</head>
+<body>
+<header>
+    <!--header here-->
+</header>
+<main class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="audio-container">
+                    <div id="audio-img">
+                        <img class="audio-img cover"/>
+                    </div>
+                    <div id="audio-player">
+                        <div class="audio-info">
+                            <span class="artist"></span> - <span class="title"></span>
+                        </div>
+                        <div class="volume-control">
+                            <button id="mute" class="volume-img unmuted"></button>
+                            <input id="volume" class="volume" type="range" min="0" max="10" value="5"/>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="media-buttons">
+                            <button id="prev"><i class="fa fa-2x fa-backward"></i></button>
+                            <button id="play"><i class="fa fa-2x fa-play"></i></button>
+                            <button id="pause"><i class="fa fa-2x fa-pause"></i></button>
+                            <button id="stop"><i class="fa fa-2x fa-stop"></i></button>
+                            <button id="next"><i class="fa fa-2x fa-forward"></i></button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="tracker">
+                            <div id="progressBar">
+                                <div id="progress" class="progress">
+                                    <div id="audio-progress" class="played"></div>
+                                    <input id="seek" class="seek" type="range" min="0"/>
+                                </div>
+                            </div>
+                            <span id="duration"></span>
+                            <span id="duration-all"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <ul id="playlist">
+                    <li song="1.mp3" cover="cover1.png" artist="Red Hot Chili Peppers">Snow.mp3</li>
+                    <li song="2.mp3" cover="cover2.jpg" artist="Red Hot Chili Peppers">Can't stop.mp3</li>
+                    <li song="3.mp3" cover="cover3.jpg" artist="Red Hot Chili Peppers">Otherside.mp3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <!--footer here-->
+</footer>
+<!-- load fontawesome via CDN -->
+<script src="https://use.fontawesome.com/4800a728b7.js"></script>
+<!-- load jQuery via CDN -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<!-- load my js files -->
+<script src="js/audio.js"></script>
+</body>
+</html>
