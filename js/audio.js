@@ -41,9 +41,9 @@
             this.seekInput.on('change', $.proxy(this.onCurrentTimeChange, this));
         },
         initDefaults: function () {
-            this.pauseBtn.hide();
+
             //FIND FIRST AUDIO
-            this.list.find('li:first-child').click();
+            this.initAudio(this.list.find('li:first-child'));
         },
         //INITIALIZATION AUDIO OBJECT && START PLAYING IF AUTOSTART==TRUE
         initAudio: function (element, autoStart) {
@@ -75,6 +75,7 @@
             this.onVolumeChange();
 
             if (autoStart) {
+                this.pauseBtn.hide();
                 this.play();
             }
         },
